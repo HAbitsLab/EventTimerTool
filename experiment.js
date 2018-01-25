@@ -21,8 +21,7 @@ var experiment = [
         action: 'Rest & Get Ready',
         secs: 10 },
         
-        
-        
+    
         
     {   
         action: 'Run',
