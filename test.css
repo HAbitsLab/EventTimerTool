@@ -70,3 +70,8 @@
 #ActionGuide {
 	font-size: 40px;
 }
+
+#resultlabel {
+	width:500px;
+	height:200px;
+}

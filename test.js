@@ -97,8 +97,10 @@ var timer;
 var reset;
 
 window.onload = function() {
-    console.log("Start experiment");
-    console.log("Start,End,LabelMeaning")
+    console.log("========== Starting experiment ===========");
+    // console.log("Start,End,Label")
+
+    $("#resultlabel").append("Start,End,Label\n");
 
     updateSelection(0);
 
@@ -119,8 +121,10 @@ function updateSelection(newIndex) {
     $('#ActionGuide').text(experiment[globalIndex].action);
     var currentTime = Date.now();
     var nextTime = currentTime + 1000*experiment[globalIndex].secs;
-    var output = currentTime + "," + nextTime + "," + experiment[globalIndex].action;
-    console.log(output);
+    var output = currentTime + "," + nextTime + "," + experiment[globalIndex].action+"\n";
+    // console.log(output);
+    $("#resultlabel").append(output);
+
 }
 
 function format(minutes, seconds) {
