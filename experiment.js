@@ -1,7 +1,26 @@
 var experiment = [
     {
         action: 'Get ready',
-        secs: 1 },
+        secs: 5 },
+    {   
+        action: 'Run',
+        secs: 10 },
+    {   
+        action: 'Rest',
+        secs: 10 }        
+    {   
+        action: 'Walk',
+        secs: 10 },
+    {   
+        action: 'Rest',
+        secs: 10 },  
+    {   
+        action: 'Jumping Jacks',
+        secs: 10 },
+    {   
+        action: 'Rest',
+        secs: 10 },
+             
     {   
         action: 'Run',
         secs: 10 },
@@ -21,27 +40,6 @@ var experiment = [
         action: 'Rest',
         secs: 10 },
         
-    
-        
-    {   
-        action: 'Run',
-        secs: 10 },
-    {   
-        action: 'Rest',
-        secs: 10 },        
-    {   
-        action: 'Walk',
-        secs: 10 },
-    {   
-        action: 'Rest',
-        secs: 10 },  
-    {   
-        action: 'Jumping Jacks',
-        secs: 10 },
-    {   
-        action: 'Rest',
-        secs: 10 },
-        
         
     {   
         action: 'Run',
@@ -76,8 +74,5 @@ var experiment = [
         secs: 10 },  
     {   
         action: 'Jumping Jacks',
-        secs: 10 },
-    {   
-        action: 'You are done',
         secs: 10 }
 ]

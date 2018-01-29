@@ -96,6 +96,8 @@ var globalIndex = 0;
 var timer;
 var reset;
 
+var previousTime = 0;
+
 window.onload = function() {
     console.log("========== Starting experiment ===========");
     // console.log("Start,End,Label")
@@ -114,16 +116,29 @@ window.onload = function() {
     timer.onAlarm(playsound);
     reset = timer.onTick(format).start();
 
+    previousTime = Date.now();
 };
 
 function updateSelection(newIndex) {
+
+    console.log(newIndex);
+
     globalIndex = newIndex;
     $('#ActionGuide').text(experiment[globalIndex].action);
+    
     var currentTime = Date.now();
-    var nextTime = currentTime + 1000*experiment[globalIndex].secs;
-    var output = currentTime + "," + nextTime + "," + experiment[globalIndex].action+"\n";
+
+    if (newIndex > 0) {
+        console.log(previousTime + "," + currentTime + "," + experiment[globalIndex - 1].action+"\n");
+    }
+    
+    previousTime = currentTime;
+
+    // var currentTime = Date.now();
+    // var nextTime = currentTime + 1000*experiment[globalIndex].secs;
+    // var output = currentTime + "," + nextTime + "," + experiment[globalIndex].action+"\n";
     // console.log(output);
-    $("#resultlabel").append(output);
+    // $("#resultlabel").append(output);
 
 }
 
@@ -142,7 +157,7 @@ function restart() {
         updateSelection(globalIndex + 1);
         timer.setTime(experiment[globalIndex].secs);
         reset = timer.start();
-    } 
+    }
 
     $('#timer').css('color', 'black')
 }
@@ -155,6 +170,8 @@ function playsound() {
         $('#timer').css('color', 'purple')
         // $('#ActionGuide').text('Prepare for the next action: ' + experiment[globalIndex + 1].action)
     } else if (globalIndex == experiment.length - 1){
+        console.log(previousTime + "," + Date.now() + "," + experiment[experiment.length - 1].action+"\n");
+
         $('#ActionGuide').text('Done!')
     }
 }
