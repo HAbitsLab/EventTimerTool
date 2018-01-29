@@ -7,7 +7,7 @@ var experiment = [
         secs: 10 },
     {   
         action: 'Rest',
-        secs: 10 }        
+        secs: 10 },     
     {   
         action: 'Walk',
         secs: 10 },
