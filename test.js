@@ -121,8 +121,6 @@ window.onload = function() {
 
 function updateSelection(newIndex) {
 
-    console.log(newIndex);
-
     globalIndex = newIndex;
     $('#ActionGuide').text(experiment[globalIndex].action);
     
