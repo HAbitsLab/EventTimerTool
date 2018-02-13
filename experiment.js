@@ -3,76 +3,32 @@ var experiment = [
         action: 'Get ready',
         secs: 5 },
     {   
-        action: 'Run',
-        secs: 10 },
+        action: 'Rest',
+        secs: 15 },
+    {   
+        action: 'Drink',
+        secs: 15 },     
+    {   
+        action: 'Talk',
+        secs: 15 },
+
     {   
         action: 'Rest',
-        secs: 10 },     
+        secs: 15 },
     {   
-        action: 'Walk',
-        secs: 10 },
+        action: 'Drink',
+        secs: 15 },     
     {   
-        action: 'Rest',
-        secs: 10 },  
-    {   
-        action: 'Jumping Jacks',
-        secs: 10 },
-    {   
-        action: 'Rest',
-        secs: 10 },
-             
-    {   
-        action: 'Run',
-        secs: 10 },
-    {   
-        action: 'Rest',
-        secs: 10 },        
-    {   
-        action: 'Walk',
-        secs: 10 },
-    {   
-        action: 'Rest',
-        secs: 10 },  
-    {   
-        action: 'Jumping Jacks',
-        secs: 10 },
-    {   
-        action: 'Rest',
-        secs: 10 },
-        
+        action: 'Talk',
+        secs: 15 },
         
     {   
-        action: 'Run',
-        secs: 10 },
-    {   
         action: 'Rest',
-        secs: 10 },        
+        secs: 15 },
     {   
-        action: 'Walk',
-        secs: 10 },
+        action: 'Drink',
+        secs: 15 },     
     {   
-        action: 'Rest',
-        secs: 10 },  
-    {   
-        action: 'Jumping Jacks',
-        secs: 10 },
-    {   
-        action: 'Rest',
-        secs: 10 },
-        
-    {   
-        action: 'Run',
-        secs: 10 },
-    {   
-        action: 'Rest',
-        secs: 10 },        
-    {   
-        action: 'Walk',
-        secs: 10 },
-    {   
-        action: 'Rest',
-        secs: 10 },  
-    {   
-        action: 'Jumping Jacks',
-        secs: 10 }
+        action: 'Talk',
+        secs: 15 },
 ]
