@@ -95,14 +95,16 @@ CountDownTimer.parse = function(seconds) {
 var globalIndex = 0;
 var timer;
 var reset;
+var round = "1";
 
 var previousTime = 0;
+
 
 window.onload = function() {
     console.log("========== Starting experiment ===========");
     // console.log("Start,End,Label")
 
-    $("#resultlabel").append("Start,End,Label\n");
+    $("#resultlabel").append("round,activity,start,end\n");
 
     updateSelection(0);
 
@@ -127,17 +129,9 @@ function updateSelection(newIndex) {
     var currentTime = Date.now();
 
     if (newIndex > 0) {
-        $("#resultlabel").append(previousTime + "," + currentTime + "," + experiment[globalIndex - 1].action+"\n");
+        $("#resultlabel").append(round + "," + (globalIndex - 1) + "," +  previousTime + "," + currentTime  +"\n");
     }
     
-    previousTime = currentTime;
-
-    // var currentTime = Date.now();
-    // var nextTime = currentTime + 1000*experiment[globalIndex].secs;
-    // var output = currentTime + "," + nextTime + "," + experiment[globalIndex].action+"\n";
-    // console.log(output);
-    // $("#resultlabel").append(output);
-
 }
 
 function format(minutes, seconds) {
@@ -149,27 +143,52 @@ function format(minutes, seconds) {
         restart();
 }
 
+function next(){
+     
+     timer.setTime(experiment[globalIndex].secs);
+     reset = timer.start();
+     previousTime = Date.now();
+     $('#timer').css('color', 'black')
+}
+
 function restart() {
 
     if (globalIndex < experiment.length - 1) {
         updateSelection(globalIndex + 1);
-        timer.setTime(experiment[globalIndex].secs);
-        reset = timer.start();
     }
 
-    $('#timer').css('color', 'black')
+    
 }
 
+function download(filename, text) {
+    var element = document.createElement('a');
+    element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+    element.setAttribute('download', filename);
+
+    element.style.display = 'none';
+    document.body.appendChild(element);
+
+    element.click();
+
+    document.body.removeChild(element);
+}
+
+
+
+
 function playsound() {
-    var snd = new Audio('elevator.mp3');
+    var snd = new Audio('./elevator.mp3');
     snd.play();
 
     if ((globalIndex < experiment.length - 1) && (globalIndex > 0)) {
         $('#timer').css('color', 'purple')
         // $('#ActionGuide').text('Prepare for the next action: ' + experiment[globalIndex + 1].action)
     } else if (globalIndex == experiment.length - 1){
-        $("#resultlabel").append(previousTime + "," + Date.now() + "," + experiment[experiment.length - 1].action+"\n");
+        $("#resultlabel").append(round + "," + (globalIndex) + "," + previousTime + "," + Date.now() +"\n");
 
-        $('#ActionGuide').text('Done!')
+        $('#ActionGuide').text('Done!');
+        // Start file download.
+        download("label.csv",$("#resultlabel").text());
     }
+        
 }
