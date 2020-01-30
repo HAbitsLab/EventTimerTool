@@ -1,12 +1,16 @@
-Run a local HTTP server inside this folder. Go to the browser, the timer will automatically start. To restart the timer, reload the page.
+Modify experiment.js to represent your experiment.
 
+```javascript
+var experiment = [
+    {
+        round : "2"}, // This is a madatory string variable the indicates the current round name
+    { 
+        // you should have a dictionary for each activity in your experiment with action and secs keys
+        action: 'StirHot', // Name of the activity
+        secs: 15 },  // seconds allocated for this activity
+    {   
+        action: 'OpenFidge',
+        secs: 15 }
+        
+]
 ```
-python -m http.server
-```
-
-(make sure to use the system python, not anaconda python)
-
-then go to localhost:8000
-
-Open the console (either Chrome console, Firefox Firebug or Safari developer tool) to observe absolute timestamps.
-
