@@ -15,4 +15,4 @@ var experiment = [
 ]
 ```
 
-open `index.html` in Chrome
+Open `index.html` in Chrome
