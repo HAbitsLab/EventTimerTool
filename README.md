@@ -1,4 +1,4 @@
-Modify experiment.js to represent your experiment.
+Modify `experiment.js` to represent your experiment.
 
 ```javascript
 var experiment = [
@@ -14,3 +14,5 @@ var experiment = [
         
 ]
 ```
+
+open `index.html` in Chrome
