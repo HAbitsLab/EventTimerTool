@@ -95,7 +95,7 @@ CountDownTimer.parse = function(seconds) {
 var globalIndex = 0;
 var timer;
 var reset;
-var round = "1";
+var round;
 
 var previousTime = 0;
 
@@ -104,13 +104,15 @@ window.onload = function() {
     console.log("========== Starting experiment ===========");
     // console.log("Start,End,Label")
 
+    round = experiment[0].round
+
     $("#resultlabel").append("round,activity,start,end\n");
 
-    updateSelection(0);
+    // updateSelection(0);
 
     display = document.querySelector('#timer');
 
-    globalIndex = 0;
+    globalIndex = 1;
     $('#ActionGuide').text(experiment[globalIndex].action);
 
     timer = new CountDownTimer(experiment[globalIndex].secs);
@@ -119,6 +121,7 @@ window.onload = function() {
     reset = timer.onTick(format).start();
 
     previousTime = Date.now();
+
 };
 
 function updateSelection(newIndex) {
