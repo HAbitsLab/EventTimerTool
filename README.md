@@ -1,7 +1,7 @@
 Run a local HTTP server inside this folder. Go to the browser, the timer will automatically start. To restart the timer, reload the page.
 
 ```
-python -m SimpleHTTPServer
+python -m http.server 8000
 ```
 
 (make sure to use the system python, not anaconda python)
